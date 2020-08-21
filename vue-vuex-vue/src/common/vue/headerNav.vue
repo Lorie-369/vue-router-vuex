@@ -6,17 +6,17 @@
       </div>
       <div class="title_nav">
         <div
-          class="title_nav-children"
+          :class="navIndex === index ? 'title_nav-children_exmple' : 'title_nav-children'"
           v-for="(item, index) in routes"
           :key="index"
-          @click="navGo(item)"
+          @click="navGo(item, index)"
         >{{item.name}}</div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 export default {
   name: "headerNav",
   data() {
@@ -26,16 +26,26 @@ export default {
     routes() {
       return this.getRoutes.routes;
     },
+    navIndex() {
+      return this.getIndex;
+    },
     ...mapGetters([
+      "getIndex",
       "getRoutes",
       // ...
     ]),
   },
-  mounted() {},
+  mounted() {
+    this.$nextTick(() => {
+      this.$router.push(this.routes[this.navIndex].path);
+    });
+  },
   methods: {
-    navGo(item) {
-      this.$router.push(item.path);
+    navGo(item, index) {
+      this.changeIndex(index);
+      this.$router.replace(item.path);
     },
+    ...mapMutations(["changeIndex"]),
   },
 };
 </script>
@@ -70,14 +80,28 @@ export default {
   font-size: 17px;
   display: inline-block;
   height: 100%;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.frame .title_nav-children:hover {
+  font-size: 19px;
+  background: #95a5a6;
+}
+.frame .title_nav-children_exmple {
+  font-family: "Satisfy", cursive;
+  font-size: 17px;
+  display: inline-block;
+  height: 100%;
   padding-left: 15px;
   padding-right: 15px;
   text-align: center;
   line-height: 50px;
   font-weight: bold;
   cursor: pointer;
-}
-.title_nav-children:hover {
   background: black;
   color: white;
 }

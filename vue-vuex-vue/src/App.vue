@@ -19,6 +19,7 @@ export default {
       return this.$router.options.routes;
     },
     ...mapGetters([
+      "getIndex",
       "getRoutes",
       // ...
     ]),
