@@ -12,8 +12,8 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-@import "../common/css/bodycss.css";
-@import "../common/css/lessTest.less";
+@import "../../common/css/bodycss.css";
+@import "../../common/css/lessTest.less";
 #Fourth {
   height: 100%;
   margin: @margin;

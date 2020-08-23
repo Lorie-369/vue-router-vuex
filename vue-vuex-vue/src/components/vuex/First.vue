@@ -15,7 +15,7 @@
   </div>
 </template>
 <script>
-import centerBody from "../common/vue/centerBody";
+import centerBody from "../../common/vue/centerBody";
 import { mapState } from "vuex";
 export default {
   name: "First",
@@ -36,8 +36,8 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-@import "../common/css/bodycss.css";
-@import "../common/css/lessTest.less";
+@import "../../common/css/bodycss.css";
+@import "../../common/css/lessTest.less";
 #First {
   height: 100%;
   margin: @margin;
