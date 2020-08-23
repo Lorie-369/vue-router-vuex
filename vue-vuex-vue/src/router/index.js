@@ -5,7 +5,7 @@ import First from "@/components/vuex/First";
 import Second from "@/components/vuex/Second";
 import Thirt from "@/components/vuex/Thirt";
 import Fourth from "@/components/vuex/Fourth";
-import objectChangeDetection from "@/components/vueSourceCode/objectChangeDetection";
+import objectChangeDetection from "@/components/vueSourceCode/objectChangeDetection/objectChangeDetection";
 
 Vue.use(Router);
 
