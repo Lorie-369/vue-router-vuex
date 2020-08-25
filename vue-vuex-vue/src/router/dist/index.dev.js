@@ -21,6 +21,8 @@ var _Fourth = _interopRequireDefault(require("@/components/vuex/Fourth"));
 
 var _htmlToWord = _interopRequireDefault(require("@/components/za/htmlToWord"));
 
+var _htmlToPdf = _interopRequireDefault(require("@/components/za/htmlToPdf"));
+
 var _objectChangeDetection = _interopRequireDefault(require("@/components/vueSourceCode/objectChangeDetection/objectChangeDetection"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -33,49 +35,56 @@ var _default = new _vueRouter["default"]({
     name: "hello页✌",
     component: _HelloWorld["default"],
     meta: {
-      requiresAuth: true
+      requiresAuth: 'certain'
     }
   }, {
     path: "/vuex/First",
     name: "第一页✌",
     component: _First["default"],
     meta: {
-      requiresAuth: false
+      requiresAuth: 'vuex'
     }
   }, {
     path: "/vuex/Second",
     name: "第二页✌",
     component: _Second["default"],
     meta: {
-      requiresAuth: false
+      requiresAuth: 'vuex'
     }
   }, {
     path: "/vuex/Thirt",
     name: "第三页✌",
     component: _Thirt["default"],
     meta: {
-      requiresAuth: false
+      requiresAuth: 'vuex'
     }
   }, {
     path: "/vuex/Fourth",
     name: "第四页✌",
     component: _Fourth["default"],
     meta: {
-      requiresAuth: false
+      requiresAuth: 'vuex'
     }
   }, {
-    path: "/vuex/htmlToWord",
+    path: "/za/htmlToWord",
     name: "纯js将html页面下载为word",
     component: _htmlToWord["default"],
     meta: {
-      requiresAuth: false
+      requiresAuth: 'htmlTo'
+    }
+  }, {
+    path: "/za/htmlToPdf",
+    name: "纯js将html页面下载为pdf",
+    component: _htmlToPdf["default"],
+    meta: {
+      requiresAuth: 'htmlTo'
     }
   }, {
     path: "/vueSourceCode/objectChangeDetection",
     name: "Object的变化侦测✌",
     component: _objectChangeDetection["default"],
     meta: {
-      requiresAuth: false
+      requiresAuth: 'vueSource'
     }
   }]
 });

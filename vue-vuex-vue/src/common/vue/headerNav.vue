@@ -6,11 +6,16 @@
       </div>
       <div class="title_nav">
         <div
-          :class="navIndex === index ? 'title_nav-children_exmple' : 'title_nav-children'"
           v-for="(item, index) in routes"
           :key="index"
           @click="navGo(item, index)"
-        >{{item.name}}</div>
+          style="display:inline-block;"
+        >
+          <div
+            v-if="item.meta.requiresAuth === 'certain' || item.meta.requiresAuth === 'htmlTo'"
+            :class="navIndex === index ? 'title_nav-children_exmple' : 'title_nav-children'"
+          >{{item.name}}</div>
+        </div>
       </div>
     </div>
   </div>

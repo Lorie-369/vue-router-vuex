@@ -6,6 +6,7 @@ import Second from "@/components/vuex/Second";
 import Thirt from "@/components/vuex/Thirt";
 import Fourth from "@/components/vuex/Fourth";
 import htmlToWord from "@/components/za/htmlToWord";
+import htmlToPdf from "@/components/za/htmlToPdf";
 import objectChangeDetection from "@/components/vueSourceCode/objectChangeDetection/objectChangeDetection";
 
 Vue.use(Router);
@@ -15,43 +16,49 @@ export default new Router({
             path: "/",
             name: "hello页✌",
             component: HelloWorld,
-            meta: { requiresAuth: true },
+            meta: { requiresAuth: 'certain' },
         },
         {
             path: "/vuex/First",
             name: "第一页✌",
             component: First,
-            meta: { requiresAuth: false },
+            meta: { requiresAuth: 'vuex' },
         },
         {
             path: "/vuex/Second",
             name: "第二页✌",
             component: Second,
-            meta: { requiresAuth: false },
+            meta: { requiresAuth: 'vuex' },
         },
         {
             path: "/vuex/Thirt",
             name: "第三页✌",
             component: Thirt,
-            meta: { requiresAuth: false },
+            meta: { requiresAuth: 'vuex' },
         },
         {
             path: "/vuex/Fourth",
             name: "第四页✌",
             component: Fourth,
-            meta: { requiresAuth: false },
+            meta: { requiresAuth: 'vuex' },
         },
         {
-            path: "/vuex/htmlToWord",
+            path: "/za/htmlToWord",
             name: "纯js将html页面下载为word",
             component: htmlToWord,
-            meta: { requiresAuth: false },
+            meta: { requiresAuth: 'htmlTo' },
+        },
+        {
+            path: "/za/htmlToPdf",
+            name: "纯js将html页面下载为pdf",
+            component: htmlToPdf,
+            meta: { requiresAuth: 'htmlTo' },
         },
         {
             path: "/vueSourceCode/objectChangeDetection",
             name: "Object的变化侦测✌",
             component: objectChangeDetection,
-            meta: { requiresAuth: false },
+            meta: { requiresAuth: 'vueSource' },
         },
     ],
 });
